@@ -25,7 +25,9 @@ namespace Web.Controllers
 
         [HttpPost]
         public ActionResult<DataObjectCollection> Post([FromBody]DataObjectCollection data)
-        {
+        { 
+            if(data is SysParamCollection s)
+                    s[0].Score++;
             data[0].Name += "_modified";
             return data;
         }

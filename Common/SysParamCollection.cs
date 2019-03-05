@@ -10,20 +10,20 @@ using Newtonsoft.Json.Serialization;
 namespace Common
 {
     [Serializable]
-    public class DataObjectCollection : CollectionBase
+    public class SysParamCollection : DataObjectCollection
     {
-        public void Add(DataObject item) => List.Add(item);
+        public void Add(SysParam item) => List.Add(item);
 
-        public DataObject this[int index]
+        public SysParam this[int index]
         {
             get
             {
-                return List[index] as DataObject;
+                return base[index] as SysParam;
             }
             set
             {
-                List[index] = value;
+                base[index] = value;
             }
         }
-    }    
+    }
 }
